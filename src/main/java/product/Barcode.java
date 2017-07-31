@@ -5,18 +5,14 @@ package product;
  */
 
 public class Barcode {
-    private long barcode;
+    private String barcode;
 
-    public Barcode(long barcode) {
+    public Barcode(String barcode) {
         this.barcode = barcode;
-    }
-
-    public long getBarcode() {
-        return barcode;
     }
 
     @Override
     public String toString() {
-        return String.valueOf(barcode);
+        return barcode;
     }
 }

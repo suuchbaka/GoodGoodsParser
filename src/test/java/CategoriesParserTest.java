@@ -26,10 +26,9 @@ public class CategoriesParserTest {
     @Before
     public void setUp() throws Exception {
         links = new LinkedHashMap<>();
-
         categoriesParser = new CategoriesParser(Variables.CATALOGUE_URL);
-        catalogueTable = categoriesParser.getAllProductGroupsInCatalogue();
 
+        catalogueTable = categoriesParser.getAllProductGroupsInCatalogue();
 
         for(Element e : catalogueTable){
             links.put(e.text(), categoriesParser.getLinkToProductGroupAsString(e));
@@ -38,7 +37,10 @@ public class CategoriesParserTest {
 
     @Test
     public void testProductGroupsParser() throws Exception {
-        Assert.assertNotNull(catalogueTable);
+        for(final Element expected : catalogueTable) {
+            Assert.assertNotNull(expected);
+            System.out.println(expected.text());
+        }
     }
 
     @Test
@@ -53,12 +55,18 @@ public class CategoriesParserTest {
         int totalBarcodes = 0;
         for(String s : links.values()) {
             LinkedList<Barcode> barcodes = categoriesParser.getAllBarcodesByCategory(s);
-            totalBarcodes += barcodes.size();
-            System.out.println(totalBarcodes);
+
+            totalBarcodes+= barcodes.size();
+
+            for(Barcode b : barcodes) {
+                System.out.println("Barcode: " + b.toString());
+            }
 
             for(Barcode b : barcodes) {
                 Assert.assertNotNull(b);
             }
         }
+
+        System.out.println("TOTAL BARCODES: " + totalBarcodes);
     }
 }
