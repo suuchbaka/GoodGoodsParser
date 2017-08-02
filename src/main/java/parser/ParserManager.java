@@ -45,6 +45,11 @@ public class ParserManager {
         return productParser.parseProduct(c.toString(), barcode.toString());
     }
 
+    @NotNull
+    public LinkedList<Barcode> parseBarcodesInCategory(String category) throws IOException {
+        return categoriesParser.getAllBarcodesByCategory(category);
+    }
+
 
     @NotNull
     static String checkStatusCode(int statusCode) {

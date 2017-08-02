@@ -47,6 +47,7 @@ public class CategoriesParserTest {
     public void testLinks() throws Exception {
         for(final String s : links.values()) {
             Assert.assertTrue(s.startsWith("http"));
+            Assert.assertFalse(s.contains("&nbsp"));
         }
     }
 
@@ -59,11 +60,9 @@ public class CategoriesParserTest {
             totalBarcodes+= barcodes.size();
 
             for(Barcode b : barcodes) {
-                System.out.println("Barcode: " + b.toString());
-            }
-
-            for(Barcode b : barcodes) {
+                Assert.assertFalse(b.toString().contains(" "));
                 Assert.assertNotNull(b);
+                System.out.println("Barcode: " + b.toString());
             }
         }
 
