@@ -13,11 +13,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CategoriesParserTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CategoriesParserTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/CategoriesParserTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="65" column="13" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+            <state relative-caret-position="280">
+              <caret line="57" column="66" lean-forward="false" selection-start-line="57" selection-start-column="66" selection-end-line="57" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoriesParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CategoriesParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/parser/CategoriesParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="748">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,13 +153,13 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/product/Barcode.java" />
         <option value="$PROJECT_DIR$/src/main/java/parser/Parser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parser/CategoriesParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/parser/ProductParser.java" />
         <option value="$PROJECT_DIR$/src/test/java/ProductParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/parser/ParserManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/product/Category.java" />
         <option value="$PROJECT_DIR$/src/test/java/CategoriesParserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/parser/CategoriesParser.java" />
       </list>
     </option>
   </component>
@@ -490,6 +490,9 @@
     <history-entry file="CategoriesParserTest_testGettingAllBarcodesByCategory - 2017.08.03 at 01h 29m 27s.xml">
       <configuration name="CategoriesParserTest.testGettingAllBarcodesByCategory" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CategoriesParserTest_testGettingAllBarcodesByCategory - 2017.08.03 at 01h 39m 32s.xml">
+      <configuration name="CategoriesParserTest.testGettingAllBarcodesByCategory" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="CategoriesParserTest_testLinks - 2017.08.03 at 01h 27m 28s.xml">
       <configuration name="CategoriesParserTest.testLinks" configurationId="JUnit" />
     </history-entry>
@@ -498,9 +501,6 @@
     </history-entry>
     <history-entry file="CategoriesParserTest_testLinks - 2017.08.03 at 01h 28m 16s.xml">
       <configuration name="CategoriesParserTest.testLinks" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductParserTest - 2017.08.03 at 00h 59m 26s.xml">
-      <configuration name="ProductParserTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ProductParserTest - 2017.08.03 at 01h 01m 17s.xml">
       <configuration name="ProductParserTest" configurationId="JUnit" />
@@ -519,8 +519,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -531,7 +530,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -914,14 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parser/CategoriesParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/parser/ParserManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
@@ -995,8 +986,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CategoriesParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="65" column="13" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+        <state relative-caret-position="280">
+          <caret line="57" column="66" lean-forward="false" selection-start-line="57" selection-start-column="66" selection-end-line="57" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/parser/CategoriesParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>

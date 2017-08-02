@@ -47,13 +47,13 @@ public class CategoriesParser {
                 .timeout(TIMEOUT)
                 .execute();
 
-       System.out.println(ParserManager.checkStatusCode(categoryPage.statusCode()));
+        System.out.println(ParserManager.checkStatusCode(categoryPage.statusCode()));
 
         Document document = categoryPage.parse();
 
         Elements barcodesElements = document.getElementsByAttributeValueContaining("id", "A2");
 
-        for(Element e : barcodesElements) {
+        for (Element e : barcodesElements) {
             barcodes.add(new Barcode(e.text()));
         }
 
@@ -61,10 +61,9 @@ public class CategoriesParser {
     }
 
     public String getLinkToProductGroupAsString(Element catalogueElement) {
-        if(catalogueElement.attr("href").contains("http")) {
+        if (catalogueElement.attr("href").contains("http")) {
             return catalogueElement.attr("href").replaceAll(" ", "");
-        }
-        else {
+        } else {
             StringBuilder sb = new StringBuilder();
             sb
                     .append("http://goodsmatrix.ru/")
