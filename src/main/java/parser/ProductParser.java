@@ -15,6 +15,7 @@ import java.io.IOException;
 public class ProductParser {
 
     private final String productURL = "http://www.goodsmatrix.ru/goods/";
+    private int TIMEOUT = 30000000;
     int totalProducts = 0;
 
     public ProductParser() {}
@@ -25,6 +26,7 @@ public class ProductParser {
                 .method(Connection.Method.GET)
                 .userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2")
                 .maxBodySize(0)
+                .timeout(TIMEOUT)
                 .execute();
 
         Document document = productPage.parse();
@@ -79,6 +81,7 @@ public class ProductParser {
                 .method(Connection.Method.GET)
                 .userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2")
                 .maxBodySize(0)
+                .timeout(TIMEOUT)
                 .execute();
 
         Document document = manufacturerPage.parse();
