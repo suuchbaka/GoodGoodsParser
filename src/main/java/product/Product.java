@@ -18,7 +18,7 @@ public class Product {
     private String storeRules;
     private String manufacturer;
 
-    public Product(int id, String name, Category category, Barcode barcode, String description, String consist, String weight, String expirationDate, String energyConsist, String storeRules, String manufacturer) {
+    public Product() {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -74,5 +74,49 @@ public class Product {
 
     public String getManufacturer() {
         return manufacturer;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public void setBarcode(Barcode barcode) {
+        this.barcode = barcode;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setConsist(String consist) {
+        this.consist = consist;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public void setEnergyConsist(String energyConsist) {
+        this.energyConsist = energyConsist;
+    }
+
+    public void setStoreRules(String storeRules) {
+        this.storeRules = storeRules;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 }

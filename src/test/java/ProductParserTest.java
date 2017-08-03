@@ -6,6 +6,7 @@ import org.junit.Test;
 import parser.CategoriesParser;
 import parser.ProductParser;
 import product.Barcode;
+import product.Category;
 import product.Product;
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class ProductParserTest {
             LinkedList<Barcode> barcodes = categoriesParser.getAllBarcodesByCategory(links.get(s));
 
             for(Barcode b : barcodes) {
-                products.add(productParser.parseProduct(s, b.toString()));
+                products.add(productParser.parseProduct(new Category(s), b));
             }
         }
 

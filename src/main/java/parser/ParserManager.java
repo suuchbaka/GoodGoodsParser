@@ -1,6 +1,6 @@
 package parser;
 
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import product.Barcode;
@@ -41,8 +41,8 @@ public class ParserManager {
     }
 
     @NotNull
-    public Product parseProduct(Category c, Barcode barcode) throws IOException {
-        return productParser.parseProduct(c.toString(), barcode.toString());
+    public Product parseProduct(Category category, Barcode barcode) throws IOException {
+        return productParser.parseProduct(category, barcode);
     }
 
     @NotNull

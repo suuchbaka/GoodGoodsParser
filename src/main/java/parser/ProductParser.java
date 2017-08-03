@@ -20,8 +20,8 @@ public class ProductParser {
 
     public ProductParser() {}
 
-    public Product parseProduct(String category, String barcode) throws IOException {
-        String url = productURL + barcode.trim() + ".html";
+    public Product parseProduct(Category category, Barcode barcode) throws IOException {
+        String url = productURL + barcode.toString().trim() + ".html";
         Connection.Response productPage = Jsoup.connect(url)
                 .method(Connection.Method.GET)
                 .userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2")
@@ -33,17 +33,47 @@ public class ProductParser {
 
         totalProducts++;
 
-        return new Product(totalProducts,
-                parseProductName(document),
-                new Category(category),
-                new Barcode(barcode),
-                parseProductDescription(document),
-                parseEnergyConsist(document),
-                parseProductWeight(document),
-                parseDocumentExpirationDate(document),
-                parseEnergyConsist(document),
-                parseStoreRules(document),
-                parseProductManufacturer(barcode));
+        Product product = new Product();
+        product.setId(totalProducts);
+        product.setCategory(category);
+        product.setBarcode(barcode);
+
+        String[] productInfo = getProductInfo(product, document);
+
+        product.setName(productInfo[0]);
+        product.setDescription(productInfo[1]);
+        product.setConsist(productInfo[2]);
+        product.setWeight(productInfo[3]);
+        product.setExpirationDate(productInfo[4]);
+        product.setEnergyConsist(productInfo[5]);
+        product.setStoreRules(productInfo[6]);
+        product.setManufacturer(productInfo[7]);
+
+        return product;
+    }
+
+    private String[] getProductInfo(Product product, Document document) throws IOException {
+        StringBuilder sb = new StringBuilder();
+
+
+        sb
+                .append(parseProductName(document))
+                .append("///")
+                .append(parseProductDescription(document))
+                .append("///")
+                .append(parseProductConsist(document))
+                .append("///")
+                .append(parseProductWeight(document))
+                .append("///")
+                .append(parseDocumentExpirationDate(document))
+                .append("///")
+                .append(parseEnergyConsist(document))
+                .append("///")
+                .append(parseStoreRules(document))
+                .append("///")
+                .append(parseProductManufacturer(product.getBarcode().toString()));
+
+        return sb.toString().split("///");
     }
 
     private String parseProductName(Document document) {
