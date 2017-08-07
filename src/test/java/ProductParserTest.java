@@ -37,7 +37,7 @@ public class ProductParserTest {
         ArrayList<Product> products = new ArrayList<>();
         int index = 0;
         for(String s : links.keySet()) {
-            LinkedList<Barcode> barcodes = categoriesParser.getAllBarcodesByCategory(links.get(s));
+            ArrayList<Barcode> barcodes = categoriesParser.getAllBarcodesByCategory(links.get(s));
 
             for(Barcode b : barcodes) {
                 products.add(productParser.parseProduct(new Category(s), b));

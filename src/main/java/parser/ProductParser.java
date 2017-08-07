@@ -37,71 +37,44 @@ public class ProductParser {
         product.setId(totalProducts);
         product.setCategory(category);
         product.setBarcode(barcode);
-
-        String[] productInfo = getProductInfo(product, document);
-
-        product.setName(productInfo[0]);
-        product.setDescription(productInfo[1]);
-        product.setConsist(productInfo[2]);
-        product.setWeight(productInfo[3]);
-        product.setExpirationDate(productInfo[4]);
-        product.setEnergyConsist(productInfo[5]);
-        product.setStoreRules(productInfo[6]);
-        product.setManufacturer(productInfo[7]);
+        product.setName(parseProductName(document));
+        product.setDescription(parseProductDescription(document));
+        product.setConsist(parseProductConsist(document));
+        product.setWeight(parseProductWeight(document));
+        product.setExpirationDate(parseDocumentExpirationDate(document));
+        product.setEnergyConsist(parseEnergyConsist(document));
+        product.setStoreRules(parseStoreRules(document));
+        product.setManufacturer(parseProductManufacturer(barcode.toString()));
 
         return product;
     }
 
-    private String[] getProductInfo(Product product, Document document) throws IOException {
-        StringBuilder sb = new StringBuilder();
-
-
-        sb
-                .append(parseProductName(document))
-                .append("///")
-                .append(parseProductDescription(document))
-                .append("///")
-                .append(parseProductConsist(document))
-                .append("///")
-                .append(parseProductWeight(document))
-                .append("///")
-                .append(parseDocumentExpirationDate(document))
-                .append("///")
-                .append(parseEnergyConsist(document))
-                .append("///")
-                .append(parseStoreRules(document))
-                .append("///")
-                .append(parseProductManufacturer(product.getBarcode().toString()));
-
-        return sb.toString().split("///");
-    }
-
     private String parseProductName(Document document) {
-        return document.select("#ctl00_ContentPH_GoodsName").text();
+        return document.select("#ctl00_ContentPH_GoodsName").text().replaceAll("\\xFFFD", "");
     }
 
     private String parseProductDescription(Document document) {
-        return document.select("#ctl00_ContentPH_Comment").text();
+        return document.select("#ctl00_ContentPH_Comment").text().replaceAll("\\xFFFD", "");
     }
 
     private String parseProductConsist(Document document) {
-        return document.select("ctl00_ContentPH_Composition").text();
+        return document.select("#ctl00_ContentPH_Composition").text().replaceAll("\\xFFFD", "");
     }
 
     private String parseProductWeight(Document document) {
-        return document.select("#ctl00_ContentPH_Net").text();
+        return document.select("#ctl00_ContentPH_Net").text().replaceAll("\\xFFFD", "");
     }
 
     private String parseDocumentExpirationDate(Document document) {
-        return document.select("#ctl00_ContentPH_KeepingTime").text();
+        return document.select("#ctl00_ContentPH_KeepingTime").text().replaceAll("\\xFFFD", "");
     }
 
     private String parseEnergyConsist(Document document) {
-        return document.select("#ctl00_ContentPH_ESL").text();
+        return document.select("#ctl00_ContentPH_ESL").text().replaceAll("\\xFFFD", "");
     }
 
     private String parseStoreRules(Document document) {
-        return document.select("#ctl00_ContentPH_StoreCond").text();
+        return document.select("#ctl00_ContentPH_StoreCond").text().replaceAll("\\xFFFD", "");
     }
 
     private String parseProductManufacturer(String barcode) throws IOException {
@@ -116,6 +89,6 @@ public class ProductParser {
 
         Document document = manufacturerPage.parse();
 
-        return document.select("#ctl00_ContentPH_ManufacturerName").text();
+        return document.select("#ctl00_ContentPH_ManufacturerName").text().replaceAll("\\xEF", "");
     }
 }

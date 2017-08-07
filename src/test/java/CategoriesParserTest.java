@@ -8,6 +8,7 @@ import org.junit.Test;
 import parser.CategoriesParser;
 import product.Barcode;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -55,7 +56,7 @@ public class CategoriesParserTest {
     public void testGettingAllBarcodesByCategory() throws Exception{
         int totalBarcodes = 0;
         for(String s : links.values()) {
-            LinkedList<Barcode> barcodes = categoriesParser.getAllBarcodesByCategory(s);
+            ArrayList<Barcode> barcodes = categoriesParser.getAllBarcodesByCategory(s);
 
             totalBarcodes+= barcodes.size();
 

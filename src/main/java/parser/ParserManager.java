@@ -8,8 +8,8 @@ import product.Category;
 import product.Product;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 
 /**
  * Created by User on 28.07.2017.
@@ -46,7 +46,7 @@ public class ParserManager {
     }
 
     @NotNull
-    public LinkedList<Barcode> parseBarcodesInCategory(String category) throws IOException {
+    public ArrayList<Barcode> parseBarcodesInCategory(String category) throws IOException {
         return categoriesParser.getAllBarcodesByCategory(category);
     }
 

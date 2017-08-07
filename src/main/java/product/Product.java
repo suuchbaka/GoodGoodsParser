@@ -1,21 +1,49 @@
 package product;
 
+import org.hibernate.annotations.OptimisticLock;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.Parent;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * Created by User on 28.07.2017.
  */
-public class Product {
+
+@Entity
+@Table(name = "ProductV3", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "ID"),
+        @UniqueConstraint(columnNames = "BARCODE    ")
+})
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = 3592329866577805843L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @PrimaryKeyJoinColumn(name = "ID")
     private int id;
+    @Column(name = "NAME", unique = true, nullable = false, columnDefinition = "TEXT")
     private String name;
 
+    @Embedded
     private Category category;
+    @Embedded
     private Barcode barcode;
 
+    @Column(name = "DESCRIPTION", columnDefinition = "TEXT")
     private String description;
+    @Column(name = "CONSIST", columnDefinition = "TEXT")
     private String consist;
+    @Column(name = "WEIGHT", columnDefinition = "TEXT")
     private String weight;
+    @Column(name = "EXPIRATION_DATE", columnDefinition = "TEXT")
     private String expirationDate;
+    @Column(name = "ENERGY_CONSIST", columnDefinition = "TEXT")
     private String energyConsist;
+    @Column(name = "STORE_RULES", columnDefinition = "TEXT")
     private String storeRules;
+    @Column(name = "MANUFACTURER", columnDefinition = "TEXT")
     private String manufacturer;
 
     public Product() {

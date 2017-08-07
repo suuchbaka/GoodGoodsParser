@@ -8,6 +8,7 @@ import org.jsoup.select.Elements;
 import product.Barcode;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -37,8 +38,8 @@ public class CategoriesParser {
         return links;
     }
 
-    public LinkedList<Barcode> getAllBarcodesByCategory(String categoryUrl) throws IOException {
-        LinkedList<Barcode> barcodes = new LinkedList<>();
+    public ArrayList<Barcode> getAllBarcodesByCategory(String categoryUrl) throws IOException {
+        ArrayList<Barcode> barcodes = new ArrayList<>();
 
         Connection.Response categoryPage = Jsoup.connect(categoryUrl)
                 .method(Connection.Method.GET)
